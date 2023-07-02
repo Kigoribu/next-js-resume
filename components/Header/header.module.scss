@@ -1,0 +1,23 @@
+//При fixed header съезжает рзобраться почему
+.header_wrapper {
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  padding: 0px 100px;
+}
+
+.header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75px;
+}
+
+.blur {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  top:0;
+  left:0
+}

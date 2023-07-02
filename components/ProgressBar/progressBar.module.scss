@@ -1,0 +1,26 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 10fr 1fr;
+}
+
+.bar {
+  background-color: #e5e5e5;
+  display: inline-block;
+  border-radius: 25px;
+  height: 25px;
+  flex: 1;
+}
+
+.bar_progress {
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #cca43b;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
