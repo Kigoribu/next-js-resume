@@ -4,15 +4,15 @@
 
 .content {
   font-family: 'Montserrat';
-  margin-top: 25px;
+  margin-top: 50px;
   color: white;
 }
 
 .content_name {
   font-size: 50px;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .content_surname {
-  font-size: 30px;
+  font-size: 24px;
 }
