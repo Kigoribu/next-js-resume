@@ -16,7 +16,7 @@
     "incremental": true,
     "plugins": [
       {
-        "name": "next",
+        "name": "next"
       },
       {
         "name": "typescript-plugin-css-modules"
@@ -26,6 +26,16 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/utils/transition.js",
+    "app/page1.jsx",
+    "components/Test/Test.jsx",
+    "app/page.jsx",
+    "app/context/context.js"
+  ],
   "exclude": ["node_modules"]
 }
