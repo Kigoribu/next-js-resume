@@ -3,10 +3,14 @@
 @tailwind utilities;
 
 html {
+	overflow: hidden;
+	height: 100%;
 	font-family: var(--font-geologica);
 }
 
 body {
+	overflow: hidden;
+	height: 100%;
 	background-color: #fff;
 }
 
