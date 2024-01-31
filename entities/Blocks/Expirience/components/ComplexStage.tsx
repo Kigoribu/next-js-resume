@@ -4,8 +4,10 @@ import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { AnimatePresence } from "framer-motion";
 import { AnimateSpringAppearance } from "@/shared/AnimateSpringAppearance";
-
+import { motion } from "framer-motion";
 import { expiriensStages } from "../data/stages";
+import { StageTitle } from "./StageTitle";
+import { MotionMyButton } from "@/shared/MyButton";
 
 const variants = {
   enter: (direction: number) => {
@@ -44,11 +46,13 @@ export const ComplexStage = () => {
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
-              <FaCircleArrowLeft
-                size="64px"
-                className="text-white cursor-pointer"
+              <MotionMyButton
+                whileTap={{ scale: 1.4 }}
+                className="text-white cursor-pointer relative"
                 onClick={() => paginate(-1)}
-              />
+              >
+                <FaCircleArrowLeft size="64px" />
+              </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>
@@ -59,7 +63,6 @@ export const ComplexStage = () => {
             <Fragment key={i}>
               {page === i ? (
                 <MotionStage
-                  key={element.title}
                   element={element}
                   custom={direction}
                   variants={variants}
@@ -70,7 +73,9 @@ export const ComplexStage = () => {
                     x: { type: "spring", stiffness: 300, damping: 30 },
                     opacity: { duration: 0.2 },
                   }}
-                />
+                >
+                  <StageTitle>{element.title}</StageTitle>
+                </MotionStage>
               ) : null}
             </Fragment>
           ))}
@@ -80,11 +85,13 @@ export const ComplexStage = () => {
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 2 && (
-              <FaCircleArrowRight
-                size="64px"
-                className="text-white cursor-pointer"
-                onClick={() => paginate(1)}
-              />
+              <MotionMyButton whileTap={{ scale: 1.4 }}>
+                <FaCircleArrowRight
+                  size="64px"
+                  className="text-white cursor-pointer"
+                  onClick={() => paginate(1)}
+                />
+              </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>

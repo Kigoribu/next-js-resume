@@ -9,12 +9,14 @@ interface HeaderProps extends React.HTMLAttributes<HTMLHeadElement> {
   children: React.ReactNode;
 }
 
-export const Header: FC<HeaderProps> = ({ refNameSection }: any) => {
+export const Header = ({ refNameSection }: any) => {
   const isNameSectionInView = useInView(refNameSection, { amount: 1 });
+
+  console.log(refNameSection);
 
   return (
     <>
-      {!isNameSectionInView ? (
+      {!isNameSectionInView && refNameSection.current !== null ? (
         <header className="w-full h-[50px] fixed top-10 grid place-items-center z-10">
           <div className="py-4 px-6 rounded-full header__effect gap-x-5 flex items-center justify-center w-[900px]">
             <div

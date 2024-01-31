@@ -26,18 +26,29 @@ export const Pagination: FC<any> = ({ refs }) => {
     }
   }, [isNameSectionInView, isAboutSectionInView, isSkillsSectionInView, isExpirienceSectionInView]);
 
-  return (
-    <div className={`fixed h-screen top-0 right-10 text-xl flex items-center pointer-events-[unset] ease-out duration-1000 ${!isNameSectionInView ? "opacity-100" : "opacity-0"}`}>
+  return page !== 1 ? (
+    <div
+      className={`opacity-1 fixed h-screen top-0 right-10 text-xl flex items-center pointer-events-[unset] ease-out duration-500`}
+    >
       <div className="flex flex-col">
         {Object.keys(refs).map((_, i) => (
           <Fragment key={i}>
             <div className={`flex justify-center items-center text-center align-middle`}>
-              <div className={`w-2 h-2 m-[1em] rounded-full ${page === i + 1 ? "bg-cyan-900" : "bg-white"}`}></div>
-              {page === i + 1 ? <motion.div layoutId="currentNav" className="absolute border-2 border-cyan-900 h-[2rem] w-[2rem] rounded-full" /> : null}
+              <div
+                className={`w-2 h-2 m-[1em] rounded-full ${
+                  page === i + 1 ? "bg-cyan-900" : "bg-white"
+                }`}
+              ></div>
+              {page === i + 1 ? (
+                <motion.div
+                  layoutId="currentNav"
+                  className="absolute border-2 border-cyan-900 h-[2rem] w-[2rem] rounded-full"
+                />
+              ) : null}
             </div>
           </Fragment>
         ))}
       </div>
     </div>
-  );
+  ) : null;
 };

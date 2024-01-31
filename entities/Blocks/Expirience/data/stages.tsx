@@ -3,16 +3,16 @@ import { IoBriefcase } from "react-icons/io5";
 import { MdOutlineSearch } from "react-icons/md";
 
 export interface IExpiriensStages {
-  date: string;
-  title: string;
-  description: string;
+  date: string | JSX.Element;
+  title: string | JSX.Element;
+  description: string | JSX.Element;
   icon: JSX.Element;
 }
 
 export const expiriensStages: IExpiriensStages[] = [
   {
     date: "2017 - 2021",
-    title: `Российский Технологический Университет МИРЭА. Специальность "Информационная безопасность"`,
+    title: `РТУ МИРЭА. Специальность "Информационная безопасность"`,
     description:
       "Получил фундаментальные знания в области программирования и информационной безопасности, которые мне помогли при более детальном изучении программирования",
     icon: <GiBookmarklet style={{ width: "100%", height: "100%" }} />,
@@ -29,4 +29,4 @@ export const expiriensStages: IExpiriensStages[] = [
     description: "",
     icon: <MdOutlineSearch style={{ width: "100%", height: "100%" }} />,
   },
-] as const;
+];

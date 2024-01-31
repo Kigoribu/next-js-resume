@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FullPageScroll } from "@/features/FullPageScroll/FullPageScroll";
 import { Header } from "@/entities/Header/Header";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import "./page.css";
 import { Name } from "@/entities/Name/Name";
 import { About } from "@/entities/Blocks/About/About";
@@ -16,7 +15,15 @@ export default function Test() {
   const refSkillsSection = useRef(null);
   const refExpirienceSection = useRef(null);
 
-  return (
+  const [isLoadingFinish, setIsLoadingFinish] = useState(false);
+
+  useEffect(() => {
+    if (refNameSection && refAboutSection && refSkillsSection && refExpirienceSection) {
+      setIsLoadingFinish(true);
+    }
+  }, [refNameSection, refAboutSection, refSkillsSection, refExpirienceSection]); //TODO: Обновить
+
+  return isLoadingFinish ? (
     <>
       <Header refNameSection={refNameSection} />
       <FullPageScroll>
@@ -32,9 +39,12 @@ export default function Test() {
         <div className="panel page__expirience" ref={refExpirienceSection}>
           <Expirience />
         </div>
-        <div className="panel">five</div>
       </FullPageScroll>
-      <Pagination refs={{ refNameSection, refAboutSection, refSkillsSection, refExpirienceSection }} />
+      <Pagination
+        refs={{ refNameSection, refAboutSection, refSkillsSection, refExpirienceSection }}
+      />
     </>
+  ) : (
+    "loading"
   );
 }
