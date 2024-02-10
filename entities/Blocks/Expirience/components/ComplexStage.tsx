@@ -1,13 +1,20 @@
 import React, { Fragment, useState } from "react";
-import { MotionStage, Stage } from "./Stage";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
 import { AnimatePresence } from "framer-motion";
-import { AnimateSpringAppearance } from "@/shared/AnimateSpringAppearance";
+import { AnimateSpringAppearance } from "@/shared/Animations/AnimateSpringAppearance";
 import { motion } from "framer-motion";
 import { expiriensStages } from "../data/stages";
-import { StageTitle } from "./StageTitle";
-import { MotionMyButton } from "@/shared/MyButton";
+import { MotionMyButton } from "@/shared/MotionCustomComponents/MyButton";
+import {
+  StageTitle,
+  MotionStageControl,
+  StageDate,
+  StageDescription,
+  StageFooter,
+} from "@/shared/Stage";
+import { Chip } from "@/shared/Chip/Chip";
+import { AnimateAppearance } from "@/shared/Animations/AnimateAppearance";
 
 const variants = {
   enter: (direction: number) => {
@@ -42,7 +49,7 @@ export const ComplexStage = () => {
 
   return (
     <div className="flex w-full h-3/5">
-      <div className="flex justify-end items-center w-1/4">
+      <div className="flex justify-center items-center w-1/4">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
@@ -58,13 +65,14 @@ export const ComplexStage = () => {
         </AnimateSpringAppearance>
       </div>
       <AnimateSpringAppearance className="items-center justify-center w-2/4">
-        <AnimatePresence initial={false} custom={direction}>
+        <>
           {expiriensStages.map((element, i) => (
             <Fragment key={i}>
               {page === i ? (
-                <MotionStage
+                <MotionStageControl
                   element={element}
                   custom={direction}
+                  className="h-full"
                   variants={variants}
                   initial="enter"
                   animate="center"
@@ -74,14 +82,42 @@ export const ComplexStage = () => {
                     opacity: { duration: 0.2 },
                   }}
                 >
+                  <StageDate>{element.date}</StageDate>
                   <StageTitle>{element.title}</StageTitle>
-                </MotionStage>
+                  <StageDescription>{element.description}</StageDescription>
+                  {i !== 2 ? (
+                    <StageFooter>
+                      <motion.div
+                        initial="hidden"
+                        whileInView="show"
+                        className="flex flex-col mt-4"
+                      >
+                        <p className="text-white text-lg">Позиция:</p>
+                        <div className="flex gap-x-2">
+                          {element?.roles?.map((role, i) => (
+                            <AnimateSpringAppearance key={i} delay={i * 0.1}>
+                              <Chip key={i}>{role}</Chip>
+                            </AnimateSpringAppearance>
+                          ))}
+                        </div>
+                        <p className="text-white text-lg mt-2">Технологии:</p>
+                        <div className="flex gap-x-2">
+                          {element?.technologies?.map((technology, i) => (
+                            <AnimateSpringAppearance key={i} delay={i * 0.1}>
+                              <Chip key={i}>{technology}</Chip>
+                            </AnimateSpringAppearance>
+                          ))}
+                        </div>
+                      </motion.div>
+                    </StageFooter>
+                  ) : null}
+                </MotionStageControl>
               ) : null}
             </Fragment>
           ))}
-        </AnimatePresence>
+        </>
       </AnimateSpringAppearance>
-      <div className="flex justify-start items-center w-1/4">
+      <div className="flex justify-center items-center w-1/4">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 2 && (

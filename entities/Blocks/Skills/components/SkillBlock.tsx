@@ -10,10 +10,10 @@ export const SkillBlock: FC<ISkillBlockProps> = ({ title, children }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}
-      className="rounded-xl h-52 w-52 flex justify-center items-center flex-col text-cyan-50 cursor-pointer"
+      className="rounded-xl h-48 w-48 flex justify-center items-center flex-col text-cyan-50 cursor-pointer"
     >
       {children}
-      <span className="font-bold text-xl">{title}</span>
+      <span className="font-bold text-lg">{title}</span>
     </motion.div>
   );
 };

@@ -20,7 +20,7 @@ export const Header = ({ refNameSection }: any) => {
         <header className="w-full h-[50px] fixed top-10 grid place-items-center z-10">
           <div className="py-4 px-6 rounded-full header__effect gap-x-5 flex items-center justify-center w-[900px]">
             <div
-              className={`flex text-xl font-bold text-cyan-900 grow ${kaushan_script.className}`}
+              className={`flex text-lg font-bold text-cyan-900 grow ${kaushan_script.className}`}
             >
               <motion.span layoutId="ki" transition={{ type: "spring", bounce: 0, duration: 1.2 }}>
                 Ki

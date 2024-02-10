@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import { motion } from "framer-motion";
 
-interface IAnimateWordProps {
+interface IAnimateAppearanceProps {
   word: string;
   delay?: number;
   index: number;
   speedOffset?: number;
 }
 
-export const AnimateWord: FC<IAnimateWordProps> = ({
+export const AnimateAppearance: FC<IAnimateAppearanceProps> = ({
   word,
   delay = 0,
   index,

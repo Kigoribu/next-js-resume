@@ -1,7 +1,7 @@
 import React from "react";
 import { SkillBlock } from "./SkillBlock";
 import { skillsData } from "../data/skillsData";
-import { AnimateSpringAppearance } from "@/shared/AnimateSpringAppearance";
+import { AnimateSpringAppearance } from "@/shared/Animations/AnimateSpringAppearance";
 
 export const AllSkills = () => {
   return (

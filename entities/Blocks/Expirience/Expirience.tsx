@@ -1,6 +1,5 @@
 import React from "react";
 import { ComplexStage } from "./components/ComplexStage";
-import { AnimateWord } from "@/shared/AnimateWord";
 import { motion } from "framer-motion";
 
 export const Expirience = () => {
@@ -9,14 +8,12 @@ export const Expirience = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ amount: 0.8 }}
-      className="w-full h-full flex items-center flex-col"
+      className="w-full h-full flex items-center justify-center flex-col"
     >
-      <div className="px-[10%]">
-        <h2 className="text-3xl font-bold text-cyan-50 pt-64">
-          <AnimateWord word="Опыт" index={0} />
-        </h2>
-      </div>
       <ComplexStage />
+      <p className="absolute left-15 bottom-15 text-5xl font-extrabold text-gray-100 opacity-25">
+        ОПЫТ
+      </p>
     </motion.section>
   );
 };

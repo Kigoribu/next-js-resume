@@ -127,7 +127,7 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
       /*[pan and well CSS scrolls]*/
 
       /*[assignments]*/
-      well.style.transform = "translateY(0)";
+      //well.style.transform = "translateY(0)"; //0 в скобках по-умолчанию. Меняю для теста
       document.body.addEventListener("wheel", handleScroll);
       document.body.addEventListener("wheel", () => _scrollY(well));
       // _swipe(well); //Раскоментить
@@ -148,7 +148,8 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
 
   return (
     <>
-      <div className="well" id="well">
+      {/* Удалить стили с корневого дива */}
+      <div style={{ transform: "translateY(-300vh)" }} className="well" id="well">
         {children}
       </div>
     </>

@@ -25,3 +25,17 @@ body {
   top: -.2em;
   cursor: pointer;
 }
+
+.panel {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.gr-background:nth-child(even) {
+  background-image: linear-gradient(to right top, #845ec2, #8d69c5, #9775c8, #9f80ca, #a88ccd, #9d96d8, #90a0e1, #84aae7, #4bb5ec, #00bfe2, #00c6ca, #00c9a7);
+}
+
+.gr-background:nth-child(odd) {
+  background-image: linear-gradient(to right bottom, #845ec2, #8d69c5, #9775c8, #9f80ca, #a88ccd, #9d96d8, #90a0e1, #84aae7, #4bb5ec, #00bfe2, #00c6ca, #00c9a7);
+}

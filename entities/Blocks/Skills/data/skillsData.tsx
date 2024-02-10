@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";

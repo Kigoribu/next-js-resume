@@ -21,7 +21,7 @@ export default function Test() {
     if (refNameSection && refAboutSection && refSkillsSection && refExpirienceSection) {
       setIsLoadingFinish(true);
     }
-  }, [refNameSection, refAboutSection, refSkillsSection, refExpirienceSection]); //TODO: Обновить
+  }, [refNameSection, refAboutSection, refSkillsSection, refExpirienceSection]);
 
   return isLoadingFinish ? (
     <>
@@ -30,13 +30,13 @@ export default function Test() {
         <div className="panel" ref={refNameSection}>
           <Name refNameSection={refNameSection} />
         </div>
-        <div className="panel page__about" ref={refAboutSection}>
+        <div className="panel gr-background" ref={refAboutSection}>
           <About />
         </div>
-        <div className="panel page__skills" ref={refSkillsSection}>
+        <div className="panel gr-background" ref={refSkillsSection}>
           <Skills />
         </div>
-        <div className="panel page__expirience" ref={refExpirienceSection}>
+        <div className="panel gr-background" ref={refExpirienceSection}>
           <Expirience />
         </div>
       </FullPageScroll>

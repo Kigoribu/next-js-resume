@@ -46,34 +46,6 @@ body {
 	transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
-.panel {
-	position: relative;
-	height: 100vh;
-	overflow: hidden;
-}
-
-.panel:nth-child(1) {
-	background: #FFFF;
-}
-
-.page__about {
-	background-image: linear-gradient(to right top, #845ec2, #8d69c5, #9775c8, #9f80ca, #a88ccd, #9d96d8, #90a0e1, #84aae7, #4bb5ec, #00bfe2, #00c6ca, #00c9a7);
-}
-
-.page__skills {
-	background-image: linear-gradient(to right bottom, #845ec2, #8d69c5, #9775c8, #9f80ca, #a88ccd, #9d96d8, #90a0e1, #84aae7, #4bb5ec, #00bfe2, #00c6ca, #00c9a7);
-}
-
-.page__expirience {
-	background-image: linear-gradient(to right top, #845ec2, #8d69c5, #9775c8, #9f80ca, #a88ccd, #9d96d8, #90a0e1, #84aae7, #4bb5ec, #00bfe2, #00c6ca, #00c9a7);
-}
-
-.panel:nth-child(5) {
-	background: #456789;
-}
-
-
-
 @layer base {
 	:root {
 		font-size: 62.5%;
