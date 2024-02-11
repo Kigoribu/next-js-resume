@@ -1,5 +1,4 @@
-import { AnimateAppearance } from "@/shared/Animations/AnimateAppearance";
-import { motion } from "framer-motion";
+import { AnimateAppearanceTextByWord } from "@/shared/Animations/AnimateAppearanceTextByWord";
 import React, { FC } from "react";
 
 interface ITitleProps {
@@ -10,7 +9,7 @@ interface ITitleProps {
 export const Title: FC<ITitleProps> = ({ title, delay }) => {
   return (
     <h2 className="text-3xl font-bold text-cyan-50">
-      <AnimateAppearance speedOffset={0.05} word={title} index={0} />
+      <AnimateAppearanceTextByWord speedOffset={0.05} text={title} />
     </h2>
   );
 };

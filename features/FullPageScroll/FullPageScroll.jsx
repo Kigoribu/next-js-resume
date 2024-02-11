@@ -1,12 +1,14 @@
 "use client";
-import React, { useEffect, memo, useRef } from "react";
+import React, { useEffect, memo, useRef, useState, useContext } from "react";
+import { PageContext } from "./context/PageContext";
 
 export const FullPageScroll = memo(function FullPageScroll({ children }) {
-  const scroll = useRef(0);
+  const wellRef = useRef(null)
+
+  const { setPageNum } = useContext(PageContext)
 
   useEffect(() => {
-    console.log("ререндер");
-    var well = document.getElementById("well");
+    var well = wellRef.current
 
     function handleScroll(e) {
       if (e.deltaY < 0) {
@@ -22,8 +24,8 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
       scdir,
       hold = false;
 
+    console.log(pnls)
     function _scrollY(obj) {
-      console.log(obj);
       var slength,
         plength,
         pan,
@@ -49,14 +51,19 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
       if (hold === false) {
         hold = true;
         pan.style.transform = "translateY(" + slength + "vh)";
+        setPageNum((prev) => {
+          if (Math.abs(slength) / 100 > prev) {
+            return prev + 1
+          }
+          else if (Math.abs(slength) / 100 < prev) {
+            return prev - 1
+          }
+          else return prev
+        })
         setTimeout(function () {
           hold = false;
         }, 1000);
-        scroll.current = scroll.current + 1;
-        console.log(scroll);
       }
-      console.log(pan);
-      console.log(scdir + ":" + slength + ":" + plength + ":" + (plength - plength / pnls));
     }
     /*[swipe detection on touchscreen devices]*/
     // function _swipe(obj) {
@@ -127,7 +134,7 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
       /*[pan and well CSS scrolls]*/
 
       /*[assignments]*/
-      //well.style.transform = "translateY(0)"; //0 в скобках по-умолчанию. Меняю для теста
+      well.style.transform = "translateY(0)";
       document.body.addEventListener("wheel", handleScroll);
       document.body.addEventListener("wheel", () => _scrollY(well));
       // _swipe(well); //Раскоментить
@@ -144,12 +151,12 @@ export const FullPageScroll = memo(function FullPageScroll({ children }) {
       document.body.removeEventListener("wheel", handleScroll);
       document.body.removeEventListener("wheel", _scrollY(well));
     };
-  });
+  }, []);
 
   return (
     <>
       {/* Удалить стили с корневого дива */}
-      <div style={{ transform: "translateY(-300vh)" }} className="well" id="well">
+      <div className="well" id="well" ref={wellRef}>
         {children}
       </div>
     </>

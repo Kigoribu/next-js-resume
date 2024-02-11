@@ -1,4 +1,4 @@
-import { AnimateAppearance } from "@/shared/Animations/AnimateAppearance";
+import { AnimateAppearanceTextByWord } from "@/shared/Animations/AnimateAppearanceTextByWord";
 import { useInView, motion } from "framer-motion";
 import React, { FC, HTMLAttributes, useRef } from "react";
 
@@ -10,9 +10,7 @@ interface INameProps extends HTMLAttributes<HTMLHeadElement> {
 export const Name: FC<INameProps> = ({ name, delay }) => {
   return (
     <h2 className="text-3xl font-bold tracking-tighter text-cyan-50 whitespace-pre">
-      {name.split(" ").map((word, i) => (
-        <AnimateAppearance speedOffset={0.1} key={i} delay={delay} index={i} word={word} />
-      ))}
+      <AnimateAppearanceTextByWord speedOffset={0.1} delay={delay} text={name} />
     </h2>
   );
 };

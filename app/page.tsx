@@ -3,48 +3,26 @@ import React, { useEffect, useRef, useState } from "react";
 import { FullPageScroll } from "@/features/FullPageScroll/FullPageScroll";
 import { Header } from "@/entities/Header/Header";
 import "./page.css";
-import { Name } from "@/entities/Name/Name";
-import { About } from "@/entities/Blocks/About/About";
-import { Skills } from "@/entities/Blocks/Skills/Skills";
-import { Expirience } from "@/entities/Blocks/Expirience/Expirience";
+import { NameBlock } from "@/entities/Blocks/NameBlock/NameBlock";
+import { AboutBlock } from "@/entities/Blocks/AboutBlock/AboutBlock";
+import { SkillsBlock } from "@/entities/Blocks/SkillsBlock/SkillsBlock";
+import { ExpirienceBlock } from "@/entities/Blocks/ExpirienceBlock/ExpirienceBlock";
 import { Pagination } from "@/widgets/Pagination/Pagination";
+import { PageContextProvider } from "@/features/FullPageScroll/context/PageContextProvider";
+import { Background } from "@/features/Background/Background";
 
-export default function Test() {
-  const refNameSection = useRef(null);
-  const refAboutSection = useRef(null);
-  const refSkillsSection = useRef(null);
-  const refExpirienceSection = useRef(null);
-
-  const [isLoadingFinish, setIsLoadingFinish] = useState(false);
-
-  useEffect(() => {
-    if (refNameSection && refAboutSection && refSkillsSection && refExpirienceSection) {
-      setIsLoadingFinish(true);
-    }
-  }, [refNameSection, refAboutSection, refSkillsSection, refExpirienceSection]);
-
-  return isLoadingFinish ? (
-    <>
-      <Header refNameSection={refNameSection} />
+export default function Page() {
+  return (
+    <PageContextProvider>
+      <Background />
+      <Header />
       <FullPageScroll>
-        <div className="panel" ref={refNameSection}>
-          <Name refNameSection={refNameSection} />
-        </div>
-        <div className="panel gr-background" ref={refAboutSection}>
-          <About />
-        </div>
-        <div className="panel gr-background" ref={refSkillsSection}>
-          <Skills />
-        </div>
-        <div className="panel gr-background" ref={refExpirienceSection}>
-          <Expirience />
-        </div>
+        <NameBlock />
+        <AboutBlock />
+        <SkillsBlock />
+        <ExpirienceBlock />
       </FullPageScroll>
-      <Pagination
-        refs={{ refNameSection, refAboutSection, refSkillsSection, refExpirienceSection }}
-      />
-    </>
-  ) : (
-    "loading"
+      <Pagination />
+    </PageContextProvider>
   );
 }

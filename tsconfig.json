@@ -35,7 +35,7 @@
     "app/page1.jsx",
     "components/Test/Test.jsx",
     "app/page.tsx",
-    "app/context/context.js"
+    "app/context/PageContext.ts"
   ],
   "exclude": ["node_modules"]
 }

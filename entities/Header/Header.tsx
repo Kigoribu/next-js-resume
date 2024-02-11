@@ -1,22 +1,17 @@
-import React, { FC, ReactHTMLElement, useEffect } from "react";
+import React, { FC, ReactHTMLElement, useContext, useEffect } from "react";
 import { inView, motion, useAnimation, useInView } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { kaushan_script } from "@/app/utils/fonts";
 import "./header.scss";
+import { PageContext } from "@/features/FullPageScroll/context/PageContext";
 
-interface HeaderProps extends React.HTMLAttributes<HTMLHeadElement> {
-  children: React.ReactNode;
-}
-
-export const Header = ({ refNameSection }: any) => {
-  const isNameSectionInView = useInView(refNameSection, { amount: 1 });
-
-  console.log(refNameSection);
+export const Header: FC = () => {
+  const { pageNum } = useContext(PageContext);
 
   return (
     <>
-      {!isNameSectionInView && refNameSection.current !== null ? (
+      {pageNum !== 0 ? (
         <header className="w-full h-[50px] fixed top-10 grid place-items-center z-10">
           <div className="py-4 px-6 rounded-full header__effect gap-x-5 flex items-center justify-center w-[900px]">
             <div

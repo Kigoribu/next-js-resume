@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes } from "react";
-import { HTMLMotionProps, MotionProps, motion } from "framer-motion";
+import React, { FC } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
 
 interface IAnimateSpringAppearanceProps extends HTMLMotionProps<"div"> {
   delay?: number;

@@ -3,9 +3,9 @@ import { IoBriefcase } from "react-icons/io5";
 import { MdOutlineSearch } from "react-icons/md";
 
 export interface IExpiriensStages {
-  date: string | JSX.Element;
-  title: string | JSX.Element;
-  description: string | JSX.Element;
+  date: string;
+  title: string;
+  description: string;
   roles?: string[];
   technologies?: string[];
   icon: JSX.Element;
@@ -14,11 +14,7 @@ export interface IExpiriensStages {
 export const expiriensStages: IExpiriensStages[] = [
   {
     date: "2017 - 2021",
-    title: (
-      <>
-        <p>РТУ МИРЭА</p> <p>Специальность &quot;Информационная безопасность&quot;</p>
-      </>
-    ),
+    title: `РТУ МИРЭА. Специальность "Информационная безопасность"`,
     description: `Получил фундаментальные знания в области сетей, программирования, информационной безопасности и информационных технологий. Результатом моего обучения была дипломная работа, на тему "Реализация безопасного удаленного доступа к локальной вычислительной сети предприятия", где я использовал эмулятор сети GNS3, клиентское приложение для входа в систему, написанное на C# и оборудование MikroTik для настройки сети.`,
     roles: ["Студент"],
     technologies: ["C++", "C#", "GNS3", "AstraLinux", "JavaScript", "HTML"],

@@ -1,16 +1,23 @@
 import { cn } from "@/lib/utils";
-import React, { FC, HTMLAttributes, ReactNode } from "react";
+import React, { FC, HTMLAttributes, ReactNode, forwardRef } from "react";
 
 interface IStageDescriptionProps extends HTMLAttributes<HTMLParagraphElement> {
   children: ReactNode;
 }
 
-export const StageDescription: FC<IStageDescriptionProps> = ({ children, className, ...other }) => {
+export const StageDescription: FC<IStageDescriptionProps> = forwardRef<
+  HTMLParagraphElement,
+  IStageDescriptionProps
+>(({ children, className, ...other }, ref) => {
   return (
-    <p className={cn("text-lg font-light text-violet-100", className)} {...other}>
+    <div
+      className={cn("text-lg font-light text-violet-100 whitespace-pre-wrap", className)}
+      {...other}
+      ref={ref}
+    >
       {children}
-    </p>
+    </div>
   );
-};
+});
 
 StageDescription.displayName = "StageDescription";

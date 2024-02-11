@@ -1,6 +1,5 @@
 import React, { FC, HTMLAttributes } from "react";
-import { motion } from "framer-motion";
-import { AnimateAppearance } from "@/shared/Animations/AnimateAppearance";
+import { AnimateAppearanceTextByWord } from "@/shared/Animations/AnimateAppearanceTextByWord";
 
 interface IAboutProps extends HTMLAttributes<HTMLParagraphElement> {
   text: string;
@@ -10,9 +9,7 @@ interface IAboutProps extends HTMLAttributes<HTMLParagraphElement> {
 export const Description: FC<IAboutProps> = ({ text, delay }) => {
   return (
     <p className="text-lg w-full mt-5 font-extralight text-cyan-50 leading-snug whitespace-pre-wrap">
-      {text.split(" ").map((word, i) => (
-        <AnimateAppearance key={i} delay={delay} index={i} word={word} />
-      ))}
+      <AnimateAppearanceTextByWord delay={delay} text={text} />
     </p>
   );
 };
