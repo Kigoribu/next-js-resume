@@ -12,7 +12,7 @@ export const SkillsBlock = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ amount: 0.8 }}
-        className="container mx-auto px-auto flex justify-center items-center h-full"
+        className="container mx-auto px-72 flex justify-center items-center h-full"
       >
         <div className="flex justify-center items-center flex-col text-center gap-3">
           <div className="px-[10%]">

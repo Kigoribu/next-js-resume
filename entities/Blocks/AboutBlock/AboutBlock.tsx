@@ -11,7 +11,7 @@ export const AboutBlock = () => {
 
   return (
     <FullPageBlock ref={refAboutSection}>
-      <div className="container mx-auto px-auto">
+      <div className="container mx-auto px-72">
         <motion.section
           initial="hidden"
           whileInView="show"
