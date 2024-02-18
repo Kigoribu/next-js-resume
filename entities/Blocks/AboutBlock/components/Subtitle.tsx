@@ -24,7 +24,7 @@ export const Subtitle: FC<ISubtitleProps> = ({ text, delay }) => {
   };
 
   return (
-    <p className="text-2xl text-gray-200 font-medium whitespace-pre">
+    <p className="text-2xl text-gray-200 font-medium whitespace-pre-wrap">
       {text.split(" ").map((word, i) => (
         <motion.span
           aria-hidden="true"

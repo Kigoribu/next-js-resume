@@ -1,11 +1,12 @@
 import React, { FC } from "react";
-import { motion } from "framer-motion";
+import { HTMLMotionProps, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-interface IBlotProps {
+interface IBlotProps extends HTMLMotionProps<"div"> {
   delay: number;
 }
 
-export const Blot: FC<IBlotProps> = ({ delay }) => {
+export const Blot: FC<IBlotProps> = ({ delay, className, ...other }) => {
   const blotAnimate = {
     hidden: {
       scale: 0,
@@ -21,7 +22,7 @@ export const Blot: FC<IBlotProps> = ({ delay }) => {
     },
   };
   return (
-    <motion.div variants={blotAnimate}>
+    <motion.div variants={blotAnimate} className={cn("", className)}>
       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <path
           fill="#62e3e3"
