@@ -12,38 +12,52 @@ export const Header: FC = () => {
   return (
     <>
       {pageNum !== 0 ? (
-        <header className="w-full h-[50px] fixed top-10 grid place-items-center z-10">
-          <div className="py-4 px-6 rounded-full header__effect gap-x-5 flex items-center justify-center w-[900px]">
-            <div
-              className={`flex text-lg font-bold text-cyan-900 grow ${kaushan_script.className}`}
+        <header className="w-full fixed top-10 place-items-center z-10 flex px-12">
+          <div
+            className={`flex justify-self-start text-2xl font-bold grow ${kaushan_script.className}`}
+          >
+            <motion.span
+              layoutId="ki"
+              animate={{ color: "#fff" }}
+              transition={{ type: "spring", bounce: 0, duration: 1.2 }}
             >
-              <motion.span layoutId="ki" transition={{ type: "spring", bounce: 0, duration: 1.2 }}>
-                Ki
-              </motion.span>
-              <motion.span layoutId="go" transition={{ type: "spring", bounce: 0, duration: 1.2 }}>
-                go
-              </motion.span>
-              <motion.span layoutId="ri" transition={{ type: "spring", bounce: 0, duration: 1.2 }}>
-                ri
-              </motion.span>
-              <motion.span layoutId="bu" transition={{ type: "spring", bounce: 0, duration: 1.2 }}>
-                bu
-              </motion.span>
-            </div>
-            <ul className="flex gap-8">
-              <li className="text-md text-cyan-800 cursor-pointer hover:text-white flex float-left items-center gap-x-1">
-                GitHub
-                <FaGithub size={22} />
-              </li>
-              <li className="text-md text-cyan-800 cursor-pointer hover:text-white flex float-left items-center gap-x-1">
-                LinkedIn
-                <FaLinkedin size={22} />
-              </li>
-              <li className="text-md text-cyan-800 cursor-pointer hover:text-white float-left  items-center gap-x-1">
-                Contact
-              </li>
-            </ul>
+              Ki
+            </motion.span>
+            <motion.span
+              animate={{ color: "#fff" }}
+              layoutId="go"
+              transition={{ type: "spring", bounce: 0, duration: 1.2 }}
+            >
+              go
+            </motion.span>
+            <motion.span
+              animate={{ color: "#fff" }}
+              layoutId="ri"
+              transition={{ type: "spring", bounce: 0, duration: 1.2 }}
+            >
+              ri
+            </motion.span>
+            <motion.span
+              animate={{ color: "#fff" }}
+              layoutId="bu"
+              transition={{ type: "spring", bounce: 0, duration: 1.2 }}
+            >
+              bu
+            </motion.span>
           </div>
+          <ul className="gap-8 text-white text-lg hidden md:flex">
+            <li className="cursor-pointer hover:text-white flex float-left items-center gap-x-1">
+              GitHub
+              <FaGithub size={22} />
+            </li>
+            <li className="cursor-pointer hover:text-white flex float-left items-center gap-x-1">
+              LinkedIn
+              <FaLinkedin size={22} />
+            </li>
+            <li className="cursor-pointer hover:text-white float-left  items-center gap-x-1">
+              Contact
+            </li>
+          </ul>
         </header>
       ) : null}
     </>
