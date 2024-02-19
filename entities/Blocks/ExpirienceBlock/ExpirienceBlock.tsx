@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { ComplexStage } from "./components/ComplexStage";
 import { motion } from "framer-motion";

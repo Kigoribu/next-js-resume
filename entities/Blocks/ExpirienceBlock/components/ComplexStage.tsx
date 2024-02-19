@@ -1,7 +1,7 @@
+"use client";
 import React, { Fragment, useState } from "react";
 import { FaCircleArrowLeft } from "react-icons/fa6";
 import { FaCircleArrowRight } from "react-icons/fa6";
-import { AnimatePresence } from "framer-motion";
 import { AnimateSpringAppearance } from "@/shared/Animations/AnimateSpringAppearance";
 import { motion } from "framer-motion";
 import { expiriensStages } from "../data/stages";

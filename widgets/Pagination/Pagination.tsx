@@ -1,6 +1,7 @@
+"use client";
 import { PageContext } from "@/features/FullPageScroll/context/PageContext";
-import { useInView, motion } from "framer-motion";
-import React, { FC, Fragment, useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import React, { FC, Fragment, useContext } from "react";
 
 export const Pagination: FC<any> = () => {
   const { pageNum } = useContext(PageContext);

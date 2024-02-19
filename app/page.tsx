@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { FullPageScroll } from "@/features/FullPageScroll/FullPageScroll";
 import { Header } from "@/entities/Header/Header";
 import "./page.css";

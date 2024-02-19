@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import React, { HTMLAttributes, ReactNode, forwardRef } from "react";
 

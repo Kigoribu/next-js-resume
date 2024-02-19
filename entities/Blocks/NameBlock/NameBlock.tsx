@@ -1,10 +1,10 @@
-import React, { FC, useContext, useRef } from "react";
+"use client";
+import React, { FC, useContext } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
 import { PageContext } from "@/features/FullPageScroll/context/PageContext";
 
 export const NameBlock: FC = () => {
-  const refNameSection = useRef(null);
   const { pageNum } = useContext(PageContext);
 
   const variants = {
@@ -27,7 +27,7 @@ export const NameBlock: FC = () => {
   };
 
   return (
-    <FullPageBlock ref={refNameSection}>
+    <FullPageBlock>
       <div className="grid h-full relative place-items-center">
         {pageNum === 0 ? (
           <motion.h1 className="name">

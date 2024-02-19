@@ -1,3 +1,4 @@
+"use client";
 import React, { FC, ReactHTMLElement, useContext, useEffect } from "react";
 import { inView, motion, useAnimation, useInView } from "framer-motion";
 import { FaGithub } from "react-icons/fa";

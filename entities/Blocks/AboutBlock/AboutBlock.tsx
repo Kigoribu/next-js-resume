@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+"use client";
+import React from "react";
 import { motion } from "framer-motion";
 import { Name } from "./components/Name";
 import { Subtitle } from "./components/Subtitle";
@@ -7,10 +8,8 @@ import { Blot } from "./components/Blot";
 import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
 
 export const AboutBlock = () => {
-  const refAboutSection = useRef(null);
-
   return (
-    <FullPageBlock ref={refAboutSection}>
+    <FullPageBlock>
       <motion.section
         initial="hidden"
         whileInView="show"
