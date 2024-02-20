@@ -48,23 +48,38 @@ export const ComplexStage = () => {
   };
 
   return (
-    <div className="flex w-full h-3/5">
-      <div className="flex justify-center items-center w-1/4">
+    <div className="relative w-full">
+      <div className="absolute left-64 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
               <MotionMyButton
-                whileTap={{ scale: 1.4 }}
+                whileTap={{ scale: 1.2 }}
                 className="text-white cursor-pointer relative"
                 onClick={() => paginate(-1)}
               >
-                <FaCircleArrowLeft size="64px" />
+                <FaCircleArrowLeft size="48px" />
               </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>
       </div>
-      <div className="items-center justify-center w-2/4">
+      <div className="absolute right-64 top-1/2 -translate-y-1/2">
+        <AnimateSpringAppearance delay={0.1}>
+          <>
+            {page !== 2 && (
+              <MotionMyButton
+                whileTap={{ scale: 1.2 }}
+                className="text-white cursor-pointer"
+                onClick={() => paginate(1)}
+              >
+                <FaCircleArrowRight size="48px" />
+              </MotionMyButton>
+            )}
+          </>
+        </AnimateSpringAppearance>
+      </div>
+      <div className="items-center justify-center container mx-auto lg:px-72 px-12">
         {expiriensStages.map((element, i) => (
           <Fragment key={i}>
             {page === i ? (
@@ -116,21 +131,6 @@ export const ComplexStage = () => {
             ) : null}
           </Fragment>
         ))}
-      </div>
-      <div className="flex justify-center items-center w-1/4">
-        <AnimateSpringAppearance delay={0.1}>
-          <>
-            {page !== 2 && (
-              <MotionMyButton whileTap={{ scale: 1.4 }}>
-                <FaCircleArrowRight
-                  size="64px"
-                  className="text-white cursor-pointer"
-                  onClick={() => paginate(1)}
-                />
-              </MotionMyButton>
-            )}
-          </>
-        </AnimateSpringAppearance>
       </div>
     </div>
   );

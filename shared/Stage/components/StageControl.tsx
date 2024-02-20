@@ -15,7 +15,7 @@ export const StageControl: FC<IStageControlProps> = forwardRef(function Stage(
     <motion.div
       ref={ref}
       className={cn(
-        "flex flex-col justify-center p-4 pointer-events-none whitespace-pre-wrap",
+        "flex flex-col justify-center pointer-events-none whitespace-pre-wrap",
         className
       )}
       {...other}
