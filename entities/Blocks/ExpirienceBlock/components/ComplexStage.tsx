@@ -1,7 +1,7 @@
 "use client";
 import React, { Fragment, useState } from "react";
-import { FaCircleArrowLeft } from "react-icons/fa6";
-import { FaCircleArrowRight } from "react-icons/fa6";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 import { AnimateSpringAppearance } from "@/shared/Animations/AnimateSpringAppearance";
 import { motion } from "framer-motion";
 import { expiriensStages } from "../data/stages";
@@ -49,7 +49,7 @@ export const ComplexStage = () => {
 
   return (
     <div className="relative w-full">
-      <div className="absolute left-64 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:left-48 left-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
@@ -58,13 +58,13 @@ export const ComplexStage = () => {
                 className="text-white cursor-pointer relative"
                 onClick={() => paginate(-1)}
               >
-                <FaCircleArrowLeft size="48px" />
+                <MdKeyboardArrowLeft size="48px" />
               </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>
       </div>
-      <div className="absolute right-64 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:right-48 right-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 2 && (
@@ -73,7 +73,7 @@ export const ComplexStage = () => {
                 className="text-white cursor-pointer"
                 onClick={() => paginate(1)}
               >
-                <FaCircleArrowRight size="48px" />
+                <MdKeyboardArrowRight size="48px" />
               </MotionMyButton>
             )}
           </>
@@ -95,32 +95,36 @@ export const ComplexStage = () => {
                   opacity: { duration: 0.2 },
                 }}
               >
-                <StageDate>
+                <StageDate className="max-md:text-lg">
                   <AnimateAppearanceTextByWord speedOffset={0.1} text={element.date} />
                 </StageDate>
-                <StageTitle>
+                <StageTitle className="max-md:text-lg">
                   <AnimateAppearanceTextByWord speedOffset={0.2} text={element.title} />
                 </StageTitle>
-                <StageDescription>
+                <StageDescription className="max-md:text-md">
                   <AnimateAppearanceTextByWord speedOffset={0.01} text={element.description} />
                 </StageDescription>
 
                 {i !== 2 ? (
                   <StageFooter>
                     <motion.div initial="hidden" whileInView="show" className="flex flex-col mt-4">
-                      <p className="text-white text-lg">Позиция:</p>
+                      <p className="text-white md:text-lg text-md">Позиция:</p>
                       <div className="flex gap-x-2">
                         {element?.roles?.map((role, i) => (
                           <AnimateSpringAppearance key={i} delay={i * 0.1}>
-                            <Chip key={i}>{role}</Chip>
+                            <Chip className="text-sm md:text-lg" key={i}>
+                              {role}
+                            </Chip>
                           </AnimateSpringAppearance>
                         ))}
                       </div>
-                      <p className="text-white text-lg mt-2">Технологии:</p>
-                      <div className="flex gap-x-2">
+                      <p className="text-white md:text-lg text-md mt-2">Технологии:</p>
+                      <div className="flex flex-wrap gap-2">
                         {element?.technologies?.map((technology, i) => (
                           <AnimateSpringAppearance key={i} delay={i * 0.1}>
-                            <Chip key={i}>{technology}</Chip>
+                            <Chip key={i} className="text-sm md:text-lg">
+                              {technology}
+                            </Chip>
                           </AnimateSpringAppearance>
                         ))}
                       </div>

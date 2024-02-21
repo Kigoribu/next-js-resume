@@ -8,7 +8,7 @@ export const Pagination: FC<any> = () => {
 
   return pageNum !== 0 ? (
     <div
-      className={`opacity-1 fixed h-screen top-0 right-6 md:right-10 text-sm md:text-xl flex items-center pointer-events-[unset] ease-out duration-500`}
+      className={`opacity-1 fixed h-screen top-0 right-6 md:right-10 text-sm md:text-xl hidden md:flex items-center pointer-events-[unset] ease-out duration-500`}
     >
       <div className="flex flex-col">
         {Object.keys([0, 1, 2, 3]).map((_, i) => (
