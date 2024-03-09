@@ -1,6 +1,7 @@
 "use client";
 import React, { FC, useContext } from "react";
-import { AnimatePresence, motion, useInView } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
 import { PageContext } from "@/features/FullPageScroll/context/PageContext";
 
@@ -50,7 +51,7 @@ export const NameBlock: FC = () => {
             animate={variants.show}
             exit={variants.exit}
           >
-            scroll
+            <MdKeyboardDoubleArrowDown size={32} />
           </motion.div>
         ) : null}
       </AnimatePresence>

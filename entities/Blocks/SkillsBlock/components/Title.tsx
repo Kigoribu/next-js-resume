@@ -8,8 +8,8 @@ interface ITitleProps {
 
 export const Title: FC<ITitleProps> = ({ title, delay }) => {
   return (
-    <h2 className="text-3xl font-bold text-cyan-50">
-      <AnimateAppearanceTextByWord speedOffset={0.05} text={title} />
+    <h2 className="text-3xl font-bold text-[#C78037]">
+      <AnimateAppearanceTextByWord speedOffset={0.05}>{title}</AnimateAppearanceTextByWord>
     </h2>
   );
 };

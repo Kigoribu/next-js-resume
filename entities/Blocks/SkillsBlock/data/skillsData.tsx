@@ -20,16 +20,34 @@ interface ISkillBlockData {
 
 export const skillsData: ISkillBlockData[] = [
   { title: "React", icon: <FaReact style={{ width: "100%", height: "100%" }} /> },
-  { title: "JavaScript", icon: <IoLogoJavascript style={{ width: "100%", height: "100%" }} /> },
-  { title: "TypeScript", icon: <SiTypescript style={{ width: "100%", height: "100%" }} /> },
+  {
+    title: "JavaScript",
+    icon: <IoLogoJavascript style={{ width: "100%", height: "100%" }} />,
+  },
+  {
+    title: "TypeScript",
+    icon: <SiTypescript style={{ width: "100%", height: "100%" }} />,
+  },
   { title: "HTML", icon: <FaHtml5 style={{ width: "100%", height: "100%" }} /> },
   { title: "CSS", icon: <FaCss3 style={{ width: "100%", height: "100%" }} /> },
   { title: "Sass", icon: <FaSass style={{ width: "100%", height: "100%" }} /> },
-  { title: "NextJS", icon: <SiNextdotjs style={{ width: "100%", height: "100%" }} /> },
+  {
+    title: "NextJS",
+    icon: <SiNextdotjs style={{ width: "100%", height: "100%" }} />,
+  },
   { title: "Redux", icon: <SiRedux style={{ width: "100%", height: "100%" }} /> },
-  { title: "MaterialUI", icon: <SiMui style={{ width: "100%", height: "100%" }} /> },
+  {
+    title: "MaterialUI",
+    icon: <SiMui style={{ width: "100%", height: "100%" }} />,
+  },
   { title: "Git", icon: <FaGithub style={{ width: "100%", height: "100%" }} /> },
-  { title: "Docker", icon: <FaDocker style={{ width: "100%", height: "100%" }} /> },
-  { title: "Photoshop", icon: <SiAdobephotoshop style={{ width: "100%", height: "100%" }} /> },
+  {
+    title: "Docker",
+    icon: <FaDocker style={{ width: "100%", height: "100%" }} />,
+  },
+  {
+    title: "Photoshop",
+    icon: <SiAdobephotoshop style={{ width: "100%", height: "100%" }} />,
+  },
   { title: "Figma", icon: <FaFigma style={{ width: "100%", height: "100%" }} /> },
 ];

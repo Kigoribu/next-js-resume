@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, forwardRef } from "react";
 import { HTMLMotionProps, motion } from "framer-motion";
-import { getChildrenByType } from "../../../app/utils/getChildrenByType";
+import { getChildrenByType } from "../../../lib/getChildrenByType";
 import { cn } from "@/lib/utils";
 
 interface IStageControlProps extends HTMLMotionProps<"div"> {

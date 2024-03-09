@@ -47,15 +47,15 @@ export const Header: FC = () => {
             </motion.span>
           </div>
           <ul className="gap-8 text-white text-lg hidden md:flex">
-            <li className="cursor-pointer hover:text-white flex float-left items-center gap-x-1">
+            <li className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1">
               GitHub
               <FaGithub size={22} />
             </li>
-            <li className="cursor-pointer hover:text-white flex float-left items-center gap-x-1">
+            <li className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1">
               LinkedIn
               <FaLinkedin size={22} />
             </li>
-            <li className="cursor-pointer hover:text-white float-left  items-center gap-x-1">
+            <li className="cursor-pointer hover:text-cyan-200 float-left  items-center gap-x-1">
               Contact
             </li>
           </ul>

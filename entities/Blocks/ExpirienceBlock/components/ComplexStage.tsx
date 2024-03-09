@@ -95,14 +95,20 @@ export const ComplexStage = () => {
                   opacity: { duration: 0.2 },
                 }}
               >
-                <StageDate className="max-md:text-lg">
-                  <AnimateAppearanceTextByWord speedOffset={0.1} text={element.date} />
+                <StageDate className="max-md:text-lg text-[#F0CE40]">
+                  <AnimateAppearanceTextByWord speedOffset={0.1}>
+                    {element.date}
+                  </AnimateAppearanceTextByWord>
                 </StageDate>
                 <StageTitle className="max-md:text-lg">
-                  <AnimateAppearanceTextByWord speedOffset={0.2} text={element.title} />
+                  <AnimateAppearanceTextByWord speedOffset={0.2}>
+                    {element.title}
+                  </AnimateAppearanceTextByWord>
                 </StageTitle>
                 <StageDescription className="max-md:text-md">
-                  <AnimateAppearanceTextByWord speedOffset={0.01} text={element.description} />
+                  <AnimateAppearanceTextByWord speedOffset={0.01}>
+                    {element.description}
+                  </AnimateAppearanceTextByWord>
                 </StageDescription>
 
                 {i !== 2 ? (
@@ -112,7 +118,7 @@ export const ComplexStage = () => {
                       <div className="flex gap-x-2">
                         {element?.roles?.map((role, i) => (
                           <AnimateSpringAppearance key={i} delay={i * 0.1}>
-                            <Chip className="text-sm md:text-lg" key={i}>
+                            <Chip className="text-sm md:text-md" key={i}>
                               {role}
                             </Chip>
                           </AnimateSpringAppearance>
@@ -122,7 +128,7 @@ export const ComplexStage = () => {
                       <div className="flex flex-wrap gap-2">
                         {element?.technologies?.map((technology, i) => (
                           <AnimateSpringAppearance key={i} delay={i * 0.1}>
-                            <Chip key={i} className="text-sm md:text-lg">
+                            <Chip key={i} className="text-sm md:text-md">
                               {technology}
                             </Chip>
                           </AnimateSpringAppearance>

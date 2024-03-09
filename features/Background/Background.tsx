@@ -3,8 +3,10 @@ import React, { useContext, useEffect } from "react";
 import { animate, motion } from "framer-motion";
 import { PageContext } from "../FullPageScroll/context/PageContext";
 import { useMotionValue, useTransform } from "framer-motion";
+import { Circle } from "./elements/Circle";
+import { Lines } from "./elements/Lines";
 
-const colors = ["#fff", "#6b21a8", "#0B879F", "#114195"];
+const colors = ["#fff", "#6b21a8", "#064759", "#114195"];
 
 export const Background = () => {
   const { pageNum } = useContext(PageContext);
@@ -19,5 +21,10 @@ export const Background = () => {
     return () => animation.stop();
   }, [pageNum, progress]);
 
-  return <motion.div className="fixed h-screen w-screen" style={{ backgroundColor: color }} />;
+  return (
+    <motion.div className="fixed h-screen w-screen" style={{ backgroundColor: color }}>
+      <Circle />
+      <Lines />
+    </motion.div>
+  );
 };

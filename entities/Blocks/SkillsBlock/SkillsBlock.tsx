@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Title } from "./components/Title";
 import { Description } from "./components/Description";
 import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
+import { PageTitle } from "@/shared/PageTitle";
 
 export const SkillsBlock = () => {
   return (
@@ -18,10 +19,7 @@ export const SkillsBlock = () => {
         <div className="flex justify-center items-center flex-col lg:text-center gap-3">
           <div>
             <Title title="Навыки" delay={0} />
-            <Description
-              delay={0.3}
-              text="Основная область деятельности - разработка React приложений. Я разрабатывал приложения для среднего бизнеса: личный кабинет клиента, табличные представления данных о предоставляемых сервисах, учавствовал в разработке интранета компании на CMS Bitrix, имел опыт работы с Tilda. Мне также интересна область Backend разработки, поэтому в свободное время изучаю NestJS."
-            />
+            <Description delay={0.3} />
           </div>
           <AllSkills />
         </div>
