@@ -9,6 +9,7 @@ import { ExpirienceBlock } from "@/entities/Blocks/ExpirienceBlock/ExpirienceBlo
 import { Pagination } from "@/widgets/Pagination/Pagination";
 import { PageContextProvider } from "@/features/FullPageScroll/context/PageContextProvider";
 import { Background } from "@/features/Background/Background";
+import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
 
 export default function Page() {
   return (
@@ -16,10 +17,18 @@ export default function Page() {
       <Background />
       <Header />
       <FullPageScroll>
-        <NameBlock />
-        <AboutBlock />
-        <SkillsBlock />
-        <ExpirienceBlock />
+        <FullPageBlock>
+          <NameBlock />
+        </FullPageBlock>
+        <FullPageBlock>
+          <AboutBlock />
+        </FullPageBlock>
+        <FullPageBlock>
+          <SkillsBlock />
+        </FullPageBlock>
+        <FullPageBlock>
+          <ExpirienceBlock />
+        </FullPageBlock>
       </FullPageScroll>
       <Pagination />
     </PageContextProvider>

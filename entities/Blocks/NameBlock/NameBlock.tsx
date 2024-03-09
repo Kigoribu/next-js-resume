@@ -28,7 +28,7 @@ export const NameBlock: FC = () => {
   };
 
   return (
-    <FullPageBlock>
+    <>
       <div className="grid h-full relative place-items-center">
         {pageNum === 0 ? (
           <motion.h1 className="name">
@@ -55,6 +55,6 @@ export const NameBlock: FC = () => {
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </FullPageBlock>
+    </>
   );
 };

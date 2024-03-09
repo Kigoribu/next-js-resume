@@ -1,8 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
-import React, { HTMLAttributes, ReactNode, forwardRef } from "react";
+import React, { HTMLAttributes, HTMLProps, ReactNode, forwardRef } from "react";
 
-interface IFullPageBlockProps extends HTMLAttributes<HTMLDivElement> {
+export interface IFullPageBlockProps extends HTMLProps<HTMLDivElement> {
   children: ReactNode;
 }
 
