@@ -101,9 +101,9 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       e.preventDefault();
     }
 
-    function handleTouchMove(e: TouchEvent) {
-      e.preventDefault(); /*[prevent scrolling when inside DIV]*/
-    }
+    // function handleTouchMove(e: TouchEvent) {
+    //   e.preventDefault(); /*[prevent scrolling when inside DIV]*/
+    // }
 
     function handleTouchEnd(e: TouchEvent) {
       var tchs = e.changedTouches[0];
@@ -134,9 +134,9 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       document.body.addEventListener("wheel", handleScroll);
       document.body.addEventListener("wheel", () => _scrollY(well!));
 
-      document.body.addEventListener("touchstart", handleTouchStart, { passive: false });
-      document.body.addEventListener("touchmove", handleTouchMove, { passive: false });
-      document.body.addEventListener("touchend", handleTouchEnd, { passive: false });
+      document.body.addEventListener("touchstart", handleTouchStart, { passive: true });
+      // document.body.addEventListener("touchmove", handleTouchMove, { passive: true });
+      document.body.addEventListener("touchend", handleTouchEnd, { passive: true });
 
       var tops = document.querySelectorAll(".top");
       for (var i = 0; i < tops.length; i++) {
@@ -151,9 +151,9 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       document.body.removeEventListener("wheel", handleScroll);
       document.body.removeEventListener("wheel", () => _scrollY(well!));
 
-      document.body.removeEventListener("touchstart", handleTouchStart);
-      document.body.removeEventListener("touchmove", handleTouchMove);
-      document.body.removeEventListener("touchend", handleTouchEnd);
+      document.body.removeEventListener("touchstart", handleTouchStart, true);
+      // document.body.removeEventListener("touchmove", handleTouchMove, false);
+      document.body.removeEventListener("touchend", handleTouchEnd, true);
     };
   }, []);
 
