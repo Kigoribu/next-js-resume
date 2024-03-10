@@ -12,12 +12,6 @@ body {
   text-transform: uppercase;
 }
 
-.well {
-  position: relative;
-  overflow: hidden;
-  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
-}
-
 .top {
   font-size: 80%;
   color: hsla(0, 0%, 100%, .25);

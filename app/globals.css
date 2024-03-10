@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--app-height: 100%;
+}
+
 html {
 	overflow: hidden;
-	height: 100%;
 	font-family: var(--font-geologica);
 }
 
 body {
 	overflow: hidden;
-	height: 100%;
 	background-color: #fff;
 }
 
@@ -48,7 +50,8 @@ body {
 
 .panel {
 	position: relative;
-	height: 100lvh;
+	height: 100svh;
+	box-sizing: border-box;
 	overflow: hidden;
 }
 

@@ -78,7 +78,7 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       }
       if (hold === false) {
         hold = true;
-        pan.style.transform = "translateY(" + slength + "vh)";
+        pan.style.transform = "translateY(" + slength + "svh)";
         setPageNum((prev) => {
           if (Math.abs(slength) / 100 > prev) {
             return prev + 1;
