@@ -9,11 +9,15 @@
 html {
 	overflow: hidden;
 	font-family: var(--font-geologica);
+	height: 100%;
+	/* Необходимо для корректной работы FullPageScroll при перезагрузке страницы */
 }
 
 body {
 	overflow: hidden;
 	background-color: #fff;
+	height: 100%;
+	/* Необходимо для корректной работы FullPageScroll при перезагрузке страницы */
 }
 
 .shadow {
