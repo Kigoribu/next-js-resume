@@ -98,7 +98,6 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       sX = tchs.pageX;
       sY = tchs.pageY;
       stT = new Date().getTime();
-      e.preventDefault();
     }
 
     // function handleTouchMove(e: TouchEvent) {
