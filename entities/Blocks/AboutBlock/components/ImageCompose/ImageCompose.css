@@ -1,0 +1,9 @@
+.image_baseImage {
+  -webkit-mask-image: url("/mask.svg");
+  mask-image: url("/mask.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+}

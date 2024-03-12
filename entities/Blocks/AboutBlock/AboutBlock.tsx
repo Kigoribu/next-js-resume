@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Name } from "./components/Name";
 import { Subtitle } from "./components/Subtitle";
 import { Description } from "./components/Description";
-import { Blot } from "./components/Blot";
+import { Blot } from "./components/ImageCompose/ImageCompose";
 
 interface IAboutBlockProps {}
 
