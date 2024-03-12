@@ -49,7 +49,7 @@ export const ComplexStage = () => {
 
   return (
     <div className="relative w-full">
-      <div className="absolute xl:left-48 left-0 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:left-96 left-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
@@ -64,7 +64,7 @@ export const ComplexStage = () => {
           </>
         </AnimateSpringAppearance>
       </div>
-      <div className="absolute xl:right-48 right-0 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:right-96 right-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 2 && (
