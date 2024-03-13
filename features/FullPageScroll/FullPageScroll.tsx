@@ -23,19 +23,19 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
   const { setPageNum } = useContext(PageContext);
 
   useEffect(() => {
-    var well = wellRef.current;
-    var pnls = blocksRef.current.length;
+    let well = wellRef.current;
+    let pnls = blocksRef.current.length;
 
-    var swdir: string,
+    let swdir: string,
       sX: number,
       sY: number,
       dX,
       dY,
       threshold = 100,
       /*[min distance traveled to be considered swipe]*/
-      slack = 50,
+      slack = 200,
       /*[max distance allowed at the same time in perpendicular direction]*/
-      alT = 500,
+      alT = 1000,
       /*[max time allowed to travel that distance]*/
       elT /*[elapsed time]*/,
       stT: number; /*[start time]*/
@@ -50,11 +50,11 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       e.stopPropagation();
     }
 
-    var scdir: string,
+    let scdir: string,
       hold = false;
 
     function _scrollY(this: void, obj: HTMLDivElement) {
-      var slength: number,
+      let slength: number,
         plength,
         pan,
         step = 100,
@@ -93,19 +93,15 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
     }
 
     function handleTouchStart(e: TouchEvent) {
-      var tchs = e.changedTouches[0];
+      let tchs = e.changedTouches[0];
       swdir = "none";
       sX = tchs.pageX;
       sY = tchs.pageY;
       stT = new Date().getTime();
     }
 
-    // function handleTouchMove(e: TouchEvent) {
-    //   e.preventDefault(); /*[prevent scrolling when inside DIV]*/
-    // }
-
     function handleTouchEnd(e: TouchEvent) {
-      var tchs = e.changedTouches[0];
+      let tchs = e.changedTouches[0];
       dX = tchs.pageX - sX;
       dY = tchs.pageY - sY;
       elT = new Date().getTime() - stT;
@@ -137,8 +133,8 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       // document.body.addEventListener("touchmove", handleTouchMove, { passive: true });
       document.body.addEventListener("touchend", handleTouchEnd, { passive: true });
 
-      var tops = document.querySelectorAll(".top");
-      for (var i = 0; i < tops.length; i++) {
+      let tops = document.querySelectorAll(".top");
+      for (let i = 0; i < tops.length; i++) {
         tops[i].addEventListener("click", function () {
           scdir = "top";
           _scrollY(well!);
