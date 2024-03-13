@@ -4,11 +4,11 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import "./ImageCompose.css";
 
-interface IBlotProps extends HTMLMotionProps<"div"> {
+interface IImageComposeProps extends HTMLMotionProps<"div"> {
   delay: number;
 }
 
-export const Blot: FC<IBlotProps> = ({ delay, className, ...other }) => {
+export const ImageCompose: FC<IImageComposeProps> = ({ delay, className, ...other }) => {
   const blotAnimate = {
     hidden: {
       scale: 0,
@@ -40,8 +40,8 @@ export const Blot: FC<IBlotProps> = ({ delay, className, ...other }) => {
   };
 
   return (
-    <motion.div className={cn("relative", className)}>
-      <motion.div variants={imageAnimate} className="image_baseImage z-50">
+    <motion.div className={cn("relative", className)} {...other}>
+      <motion.div variants={imageAnimate} className="image_baseImage ">
         <Image src="/myPhotoCrop3.png" width={500} height={500} alt="123" />
       </motion.div>
       <motion.svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" variants={blotAnimate}>

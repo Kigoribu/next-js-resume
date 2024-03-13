@@ -6,7 +6,7 @@ import { useMotionValue, useTransform } from "framer-motion";
 import { Circle } from "./elements/Circle";
 import { Lines } from "./elements/Lines";
 
-const colors = ["#fff", "#6b21a8", "#064759", "#114195"];
+const colors = ["#fff", "#6b21a8", "#69172B", "#114195"];
 
 export const Background = () => {
   const { pageNum } = useContext(PageContext);

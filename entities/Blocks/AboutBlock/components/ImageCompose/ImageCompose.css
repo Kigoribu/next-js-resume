@@ -4,6 +4,7 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   position: absolute;
-  top: 60px;
-  left: 60px;
+  top: 10%;
+  left: 10%;
+  z-index: 50;
 }

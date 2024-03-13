@@ -47,7 +47,7 @@ const variants = {
   },
 };
 
-const colors = ["#fff", "#DE4FB3", "#3491AC", "#4475CA"];
+const colors = ["#fff", "#DE4FB3", "#B9836A", "#4475CA"];
 
 export const Lines = () => {
   const { pageNum } = useContext(PageContext);

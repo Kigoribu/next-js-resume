@@ -49,7 +49,7 @@ export const ComplexStage = () => {
 
   return (
     <div className="relative w-full">
-      <div className="absolute xl:left-96 left-0 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:left-56 sm:left-6 left-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 0 && (
@@ -58,13 +58,13 @@ export const ComplexStage = () => {
                 className="text-white cursor-pointer relative"
                 onClick={() => paginate(-1)}
               >
-                <MdKeyboardArrowLeft size="48px" />
+                <MdKeyboardArrowLeft size="48px" color="#F0CE40" />
               </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>
       </div>
-      <div className="absolute xl:right-96 right-0 top-1/2 -translate-y-1/2">
+      <div className="absolute xl:right-56 sm:right-6 right-0 top-1/2 -translate-y-1/2">
         <AnimateSpringAppearance delay={0.1}>
           <>
             {page !== 2 && (
@@ -73,13 +73,13 @@ export const ComplexStage = () => {
                 className="text-white cursor-pointer"
                 onClick={() => paginate(1)}
               >
-                <MdKeyboardArrowRight size="48px" />
+                <MdKeyboardArrowRight size="48px" color="#F0CE40" />
               </MotionMyButton>
             )}
           </>
         </AnimateSpringAppearance>
       </div>
-      <div className="items-center justify-center container mx-auto lg:px-72 px-12">
+      <div className="items-center justify-center container mx-auto xl:px-72 px-12">
         {expiriensStages.map((element, i) => (
           <Fragment key={i}>
             {page === i ? (
