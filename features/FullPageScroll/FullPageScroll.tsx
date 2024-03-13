@@ -31,12 +31,9 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       sY: number,
       dX,
       dY,
-      threshold = 100,
-      /*[min distance traveled to be considered swipe]*/
-      slack = 200,
-      /*[max distance allowed at the same time in perpendicular direction]*/
-      alT = 1000,
-      /*[max time allowed to travel that distance]*/
+      threshold = 100 /*[min distance traveled to be considered swipe]*/,
+      slack = 200 /*[max distance allowed at the same time in perpendicular direction]*/,
+      alT = 1000 /*[max time allowed to travel that distance]*/,
       elT /*[elapsed time]*/,
       stT: number; /*[start time]*/
 
@@ -130,7 +127,6 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       document.body.addEventListener("wheel", () => _scrollY(well!));
 
       document.body.addEventListener("touchstart", handleTouchStart, { passive: true });
-      // document.body.addEventListener("touchmove", handleTouchMove, { passive: true });
       document.body.addEventListener("touchend", handleTouchEnd, { passive: true });
 
       let tops = document.querySelectorAll(".top");
@@ -147,14 +143,12 @@ const FullPageScrollNotMemo: FC<IFullPageScrollProps> = ({ children }) => {
       document.body.removeEventListener("wheel", () => _scrollY(well!));
 
       document.body.removeEventListener("touchstart", handleTouchStart, true);
-      // document.body.removeEventListener("touchmove", handleTouchMove, false);
       document.body.removeEventListener("touchend", handleTouchEnd, true);
     };
   }, []);
 
   return (
     <>
-      {/* Удалить стили с корневого дива */}
       <div className="well" id="well" ref={wellRef}>
         {Children.map(children, (child, i) =>
           cloneElement(child, { ref: (el: HTMLDivElement) => (blocksRef.current[i] = el) })
