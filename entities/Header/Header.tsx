@@ -1,8 +1,8 @@
 "use client";
-import React, { FC, ReactHTMLElement, useContext, useEffect } from "react";
-import { inView, motion, useAnimation, useInView } from "framer-motion";
+import React, { FC, useContext } from "react";
+import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import { AiFillMail } from "react-icons/ai";
 import { kaushan_script } from "@/app/utils/fonts";
 import "./header.scss";
 import { PageContext } from "@/features/FullPageScroll/context/PageContext";
@@ -48,15 +48,14 @@ export const Header: FC = () => {
           </div>
           <ul className="gap-8 text-white text-lg hidden md:flex">
             <li className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1">
-              GitHub
-              <FaGithub size={22} />
-            </li>
-            <li className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1">
-              LinkedIn
-              <FaLinkedin size={22} />
-            </li>
-            <li className="cursor-pointer hover:text-cyan-200 float-left  items-center gap-x-1">
-              Contact
+              <a
+                href="mailto:kigoribu@gmail.com"
+                className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                kigoribu@gmail.com
+              </a>
             </li>
           </ul>
         </header>

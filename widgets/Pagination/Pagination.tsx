@@ -3,7 +3,7 @@ import { PageContext } from "@/features/FullPageScroll/context/PageContext";
 import { motion } from "framer-motion";
 import React, { FC, Fragment, useContext } from "react";
 
-export const Pagination: FC<any> = () => {
+export const Pagination: FC = () => {
   const { pageNum } = useContext(PageContext);
 
   return pageNum !== 0 ? (

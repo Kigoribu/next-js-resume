@@ -13,7 +13,7 @@ export const Description: FC<IAboutProps> = ({ delay }) => {
         <span className="font-bold text-white">эффективных и высококачественных</span>{" "}
         пользовательских интерфейсов, используя передовые технологии и методики разработки. Мне
         нравится <span className="font-bold text-white">совместная работа</span> и участие в
-        <span className="font-bold text-white">интересных и сложных проектах</span>. Я готов к новым
+        <span className="font-bold text-white">интересных и сложных проектах.</span> Я готов к новым
         вызовам и продолжаю расширять свои знания и навыки в области фронтенд разработки и не
         только.
       </AnimateAppearanceTextByWord>

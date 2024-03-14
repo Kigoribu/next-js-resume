@@ -10,6 +10,7 @@ import { Pagination } from "@/widgets/Pagination/Pagination";
 import { PageContextProvider } from "@/features/FullPageScroll/context/PageContextProvider";
 import { Background } from "@/features/Background/Background";
 import { FullPageBlock } from "@/features/FullPageScroll/FullPageBlock";
+import { GitHub } from "@/entities/LayoutElements/GitHub";
 
 export default function Page() {
   return (
@@ -31,6 +32,7 @@ export default function Page() {
         </FullPageBlock>
       </FullPageScroll>
       <Pagination />
+      <GitHub />
     </PageContextProvider>
   );
 }
