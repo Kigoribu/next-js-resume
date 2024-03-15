@@ -1,13 +1,5 @@
 import "./globals.css";
-import {
-  Nunito_Sans,
-  Cousine,
-  Manrope,
-  Montserrat_Alternates,
-  Geologica,
-  Kaushan_Script,
-} from "next/font/google";
-import { kaushan_script, geologica } from "@/app/utils/fonts";
+import { geologica } from "@/app/utils/fonts";
 
 export const metadata = {
   title: "Kigoribu`s page",

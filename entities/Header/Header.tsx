@@ -1,10 +1,7 @@
 "use client";
 import React, { FC, useContext } from "react";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
-import { AiFillMail } from "react-icons/ai";
 import { kaushan_script } from "@/app/utils/fonts";
-import "./header.scss";
 import { PageContext } from "@/features/FullPageScroll/context/PageContext";
 
 export const Header: FC = () => {
