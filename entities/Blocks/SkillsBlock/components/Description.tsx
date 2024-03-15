@@ -12,11 +12,11 @@ export const Description: FC<IDescriptionProps> = ({ delay }) => {
         Основная область деятельности - разработка
         <span className="font-bold text-white">React</span>
         приложений. Я разрабатывал приложения для среднего бизнеса:
-        <span className="font-bold text-white">личный кабинет клиента</span>, табличные
+        <span className="font-bold text-white">личный кабинет клиента,</span> табличные
         представления данных о предоставляемых сервисах, учавствовал в разработке интранета компании
         на CMS Bitrix, имел опыт работы с Tilda. Мне также интересна область Backend разработки,
         поэтому в свободное время
-        <span className="font-bold text-white">изучаю NestJS</span>.
+        <span className="font-bold text-white">изучаю NestJS.</span>
       </AnimateAppearanceTextByWord>
     </p>
   );
