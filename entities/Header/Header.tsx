@@ -53,6 +53,7 @@ export const Header: FC = () => {
                 className="cursor-pointer hover:text-cyan-200 flex float-left items-center gap-x-1"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Написать письмо"
               >
                 kigoribu@gmail.com
               </a>

@@ -57,6 +57,7 @@ export const ComplexStage = () => {
                 whileTap={{ scale: 1.2 }}
                 className="text-white cursor-pointer relative"
                 onClick={() => paginate(-1)}
+                aria-label="Назад"
               >
                 <MdKeyboardArrowLeft size="48px" color="#F0CE40" />
               </MotionMyButton>
@@ -72,6 +73,7 @@ export const ComplexStage = () => {
                 whileTap={{ scale: 1.2 }}
                 className="text-white cursor-pointer"
                 onClick={() => paginate(1)}
+                aria-label="Вперед"
               >
                 <MdKeyboardArrowRight size="48px" color="#F0CE40" />
               </MotionMyButton>

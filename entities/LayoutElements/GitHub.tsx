@@ -8,6 +8,7 @@ export const GitHub = () => {
       href="https://github.com/Kigoribu"
       target="_blank"
       rel="noopener noreferrer"
+      aria-label="Перейти на GitHub профиль"
     >
       <FaGithubAlt size={48} />
     </a>
